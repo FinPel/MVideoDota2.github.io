@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Турнир Dota 2 x М.Видео–Эльдорадо</title>
+  <!-- Подключение шрифтов Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet" />
+  <!-- Подключение внешнего CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <button class="register-btn">Зарегистрироваться</button>
+  </header>
+
+  <nav>
+    <a id="open-groups">Группы</a>
+    <a id="open-playoff">Плей-офф</a>
+    <a id="open-rules">Правила</a>
+    <a id="open-sponsor">Спонсор</a>
+  </nav>
+
+  <div class="bottom-bg"></div>
+
+  <!-- Модальные окна -->
+  <div class="modal-overlay" id="modal-groups" role="dialog" aria-modal="true" aria-labelledby="groups-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="groups-title">Группы</h2>
+      <div class="groups">
+        <div class="group">
+          <h2>Группа A</h2>
+          <table class="team-table">
+            <tr><th>Команда</th><th>Очки</th><th>Сыграно</th></tr>
+            <tr><td>Team Alpha</td><td>6</td><td>3</td></tr>
+            <tr><td>Team Bravo</td><td>4</td><td>3</td></tr>
+            <tr><td>Team Charlie</td><td>2</td><td>3</td></tr>
+            <tr><td>Team Delta</td><td>0</td><td>3</td></tr>
+          </table>
+        </div>
+        <div class="group">
+          <h2>Группа B</h2>
+          <table class="team-table">
+            <tr><th>Команда</th><th>Очки</th><th>Сыграно</th></tr>
+            <tr><td>Team Echo</td><td>5</td><td>3</td></tr>
+            <tr><td>Team Foxtrot</td><td>4</td><td>3</td></tr>
+            <tr><td>Team Golf</td><td>3</td><td>3</td></tr>
+            <tr><td>Team Hotel</td><td>2</td><td>3</td></tr>
+          </table>
+        </div>
+        <div class="group">
+          <h2>Группа C</h2>
+          <table class="team-table">
+            <tr><th>Команда</th><th>Очки</th><th>Сыграно</th></tr>
+            <tr><td>Team India</td><td>6</td><td>3</td></tr>
+            <tr><td>Team Juliet</td><td>4</td><td>3</td></tr>
+            <tr><td>Team Kilo</td><td>2</td><td>3</td></tr>
+            <tr><td>Team Lima</td><td>0</td><td>3</td></tr>
+          </table>
+        </div>
+        <div class="group">
+          <h2>Группа D</h2>
+          <table class="team-table">
+            <tr><th>Команда</th><th>Очки</th><th>Сыграно</th></tr>
+            <tr><td>Team Mike</td><td>5</td><td>3</td></tr>
+            <tr><td>Team November</td><td>4</td><td>3</td></tr>
+            <tr><td>Team Oscar</td><td>3</td><td>3</td></tr>
+            <tr><td>Team Papa</td><td>2</td><td>3</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-playoff" role="dialog" aria-modal="true" aria-labelledby="playoff-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="playoff-title">Плей-офф</h2>
+      <div class="playoff">
+        <div class="bracket">
+          <div class="round">
+            <div class="match">A1 vs B2</div>
+            <div class="match">B1 vs A2</div>
+            <div class="match">C1 vs D2</div>
+            <div class="match">D1 vs C2</div>
+          </div>
+          <div class="round">
+            <div class="match">Победитель 1 vs Победитель 2</div>
+            <div class="match">Победитель 3 vs Победитель 4</div>
+          </div>
+          <div class="round">
+            <div class="match">Финал</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-rules" role="dialog" aria-modal="true" aria-labelledby="rules-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="rules-title">Правила турнира</h2>
+      <div class="rules-section">
+        <ul>
+          <li>К участию допускаются только сотрудники сети М.Видео–Эльдорадо (МВМ).</li>
+          <li>Каждая команда состоит из 5 игроков.</li>
+          <li>Турнир проходит по системе группового этапа и плей-офф.</li>
+          <li>Из каждой группы в плей-офф выходят две лучшие команды.</li>
+          <li>Все матчи проходят в формате Best of 1, финал — Best of 3.</li>
+          <li>Уважайте соперников и соблюдайте принципы честной игры.</li>
+          <li>Организаторы оставляют за собой право вносить изменения в регламент.</li>
+        </ul>
+        <p>
+          Докажи, что именно твоя команда достойна победы!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-sponsor" role="dialog" aria-modal="true" aria-labelledby="sponsor-title" tabindex="-1">
+    <div class="modal" tabindex="0">
+      <button class="close-btn" aria-label="Закрыть">&times;</button>
+      <h2 id="sponsor-title">Официальный спонсор</h2>
+      <div class="sponsor">
+        <div class="sponsor-logo">
+          <img src="https://cdn1.ozonusercontent.com/s3/product-service-meta-media/0dd9d6ec-95fb-4d9e-9cd7-38b49e4f1718.jpg" alt="Carrera" />
+        </div>
+        <p>
+          Благодарим компанию Carrera за поддержку нашего турнира и предоставление призов для победителей!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modalGroups = document.getElementById('modal-groups');
+    const modalPlayoff = document.getElementById('modal-playoff');
+    const modalSponsor = document.getElementById('modal-sponsor');
+    const modalRules = document.getElementById('modal-rules');
+
+    document.getElementById('open-groups').addEventListener('click', () => {
+      modalGroups.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalGroups.querySelector('.modal').focus();
+    });
+    document.getElementById('open-playoff').addEventListener('click', () => {
+      modalPlayoff.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalPlayoff.querySelector('.modal').focus();
+    });
+    document.getElementById('open-sponsor').addEventListener('click', () => {
+      modalSponsor.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalSponsor.querySelector('.modal').focus();
+    });
+    document.getElementById('open-rules').addEventListener('click', () => {
+      modalRules.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      modalRules.querySelector('.modal').focus();
+    });
+
+    const closeButtons = document.querySelectorAll('.close-btn');
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const modalOverlay = btn.closest('.modal-overlay');
+        modalOverlay.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    });
+
+    [modalGroups, modalPlayoff, modalSponsor, modalRules].forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        [modalGroups, modalPlayoff, modalSponsor, modalRules].forEach(modal => {
+          if (modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
