@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>Турнир Dota 2 x М.Видео–Эльдорадо</title>
-  <!-- Подключение шрифтов Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet" />
-  <!-- Подключение внешнего CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&family=Playfair+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <button class="register-btn">Зарегистрироваться</button>
+    <div class="header-btns">
+      <button class="register-btn" id="register-btn">Зарегистрироваться</button>
+      <button class="stream-btn" id="stream-btn">Смотреть трансляцию</button>
+      <button class="channel-btn" id="channel-btn">Канал</button>
+    </div>
   </header>
 
   <nav>
@@ -20,9 +22,14 @@
     <a id="open-sponsor">Спонсор</a>
   </nav>
 
-  <div class="bottom-bg"></div>
-
-  <!-- Модальные окна -->
+  <div class="bottom-bg">
+    <div class="bottom-text">
+      Добро пожаловать на главный киберспортивный турнир года для сотрудников М.Видео–Эльдорадо!<br>
+      Это твой шанс проявить командный дух, стратегическое мышление и любовь к Dota 2.<br>
+      Сразись с коллегами, пройди групповой этап и докажи, что именно ваша команда достойна титула сильнейшей!<br>
+      Побеждай, вдохновляй и стань частью легенды!
+    </div>
+  </div>
   <div class="modal-overlay" id="modal-groups" role="dialog" aria-modal="true" aria-labelledby="groups-title" tabindex="-1">
     <div class="modal" tabindex="0">
       <button class="close-btn" aria-label="Закрыть">&times;</button>
@@ -158,7 +165,6 @@
       document.body.style.overflow = 'hidden';
       modalRules.querySelector('.modal').focus();
     });
-
     const closeButtons = document.querySelectorAll('.close-btn');
     closeButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -176,7 +182,6 @@
         }
       });
     });
-
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         [modalGroups, modalPlayoff, modalSponsor, modalRules].forEach(modal => {
@@ -186,6 +191,16 @@
           }
         });
       }
+    });
+    document.getElementById('register-btn').addEventListener('click', function() {
+      window.open('https://t.me/MVideoDota2_bot', '_blank');
+    });
+
+    document.getElementById('stream-btn').addEventListener('click', function() {
+      window.open('https://www.twitch.tv/black__style?sr=a', '_blank'); 
+    });
+    document.getElementById('channel-btn').addEventListener('click', function() {
+      window.open('https://t.me/dota2mvideokemerovo', '_blank'); 
     });
   </script>
 </body>

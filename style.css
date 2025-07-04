@@ -6,6 +6,16 @@
   0%, 100% { transform: scale(1);}
   50% { transform: scale(1.03);}
 }
+@keyframes buttonGlow {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(255,255,255,0.7);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px 4px rgba(255,255,255,1);
+    transform: scale(1.05);
+  }
+}
 body {
   background: linear-gradient(135deg, #2c0404 0%, #7c2323 100%);
   color: #fff;
@@ -36,6 +46,13 @@ header::before {
   background: rgba(44,4,4,0.6);
   z-index: 0;
 }
+.header-btns {
+  display: flex;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  z-index: 2;
+}
 .register-btn {
   position: relative;
   z-index: 1;
@@ -52,8 +69,6 @@ header::before {
   animation: pulse 2s infinite;
   transition: all 0.3s ease;
   user-select: none;
-  margin-bottom: 10px;
-  margin-right: 10px;
   text-shadow: 0 0 8px #ff0000;
   letter-spacing: 0.05em;
 }
@@ -63,7 +78,51 @@ header::before {
   border-color: #ff4a4a;
   background: linear-gradient(90deg, #ff0000 0%, #ff7373 100%);
 }
-
+.stream-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 14px 36px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #7b2ff2 0%, #f357ff 100%);
+  color: #fff;
+  border: 3px solid #7b2ff2;
+  cursor: pointer;
+  box-shadow: 0 8px 28px #7b2ff299;
+  margin-bottom: 0;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px #7b2ff2;
+  letter-spacing: 0.04em;
+  animation: buttonGlow 3s ease-in-out infinite;
+}
+.stream-btn:hover {
+  background: linear-gradient(90deg, #a259f7 0%, #c471ed 100%);
+  border-color: #a259f7;
+  transform: translateY(-4px) scale(1.04);
+}
+.channel-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  padding: 14px 36px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #007bff 0%, #00c6ff 100%);
+  color: #fff;
+  border: 3px solid #007bff;
+  cursor: pointer;
+  box-shadow: 0 8px 28px #007bff99;
+  margin-bottom: 0;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px #007bff;
+  letter-spacing: 0.04em;
+  animation: buttonGlow 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+.channel-btn:hover {
+  background: linear-gradient(90deg, #005bea 0%, #3ec6e0 100%);
+  border-color: #005bea;
+  transform: translateY(-4px) scale(1.04);
+}
 nav {
   display: flex;
   justify-content: center;
@@ -91,11 +150,8 @@ nav a:hover {
   border-color: #ff4a4a;
   transform: translateY(-3px);
 }
-.motivation {
-  display: none;
-}
-
 .bottom-bg {
+  position: relative;
   background: url('https://img.championat.com/s/1350x900/news/big/e/k/pgl-arlington-major-2022-po-dota-2-raspisanie-pyatogo-dnya-i-pryamye-translyacii_1659970205841999375.jpg') no-repeat center center/cover;
   height: 65vh;
   box-shadow: inset 0 0 60px 20px rgba(44,4,4,0.8);
@@ -103,6 +159,29 @@ nav a:hover {
   flex-shrink: 0;
   margin: 0;
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
+}
+.bottom-text {
+  max-width: 900px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #ffd6d6;
+  text-align: center;
+  line-height: 1.6;
+  padding: 30px 40px;
+  background: rgba(124, 35, 35, 0.75);
+  border: 3px solid #ff0000;
+  border-radius: 20px;
+  text-shadow:
+    -2px -2px 3px #7c0000,
+    2px -2px 3px #7c0000,
+    -2px 2px 3px #7c0000,
+    2px 2px 3px #7c0000;
+  user-select: none;
+  animation: fadeIn 2s ease forwards;
 }
 
 /* Модальные окна */
@@ -366,23 +445,29 @@ nav a:hover {
     padding: 20px;
     height: auto;
   }
-  .register-btn {
-    margin: 15px 0 0 0;
-    align-self: center;
+  .header-btns {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .register-btn, .stream-btn, .channel-btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+  .bottom-text {
+    font-size: 1.3rem;
+    max-width: 90vw;
+    padding: 20px 25px;
   }
 }
 @media (max-width: 700px) {
-  .register-btn {
+  .register-btn, .stream-btn, .channel-btn {
     font-size: 1rem;
     padding: 10px 28px;
   }
-  .rules-section {
-    font-size: 1rem;
-    padding: 20px 16px;
-    max-width: 95vw;
-  }
-  .sponsor p {
-    font-size: 1rem;
-    padding: 8px 12px;
+  .bottom-text {
+    font-size: 1.1rem;
+    padding: 16px 18px;
   }
 }
